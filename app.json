@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/top/top",
+    "pages/search/search",
+    "pages/logs/logs",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "豆瓣电影",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 150
+  },
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#2aa515",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "热映",
+        "iconPath": "images/tabBar/movie.png",
+        "selectedIconPath": "images/tabBar/movieSelected.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "images/tabBar/search.png",
+        "selectedIconPath": "images/tabBar/searchSelected.png"
+      },
+      {
+        "pagePath": "pages/top/top",
+        "text": "精选",
+        "iconPath": "images/tabBar/cinema.png",
+        "selectedIconPath": "images/tabBar/cinemaSelected.png"
+      }
+    ]
+  }
+}

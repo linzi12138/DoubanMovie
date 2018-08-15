@@ -1,0 +1,62 @@
+<!--pages/detial/detial.wxml-->
+
+<block>
+
+  <view class='detialTop'>
+    <view class='blur' style='background-image:url("{{movie.images.large}}");'></view>
+    <view class='detailHeader'>
+      <view class='detailPic'>
+        <image src='{{movie.images.medium}}'></image>
+      </view>
+      <view class='detailTitle'>
+        <text>{{movie.title}}\n</text>
+        <text>{{movie.genres}}\n</text>
+        <text>{{movie.countries}}\n</text>
+        <text>上映时间： {{movie.year}}\n</text>
+      </view>
+    </view>
+    <view class='detailBtn'>
+      <button class='btn1' bindtap='showText1'>想看</button>
+      <button class='btn2' bindtap='showText2'>评分</button>
+    </view>
+  </view>
+</block>
+
+
+<view class='detailText'>
+  <text class='movieDetail'>电影简介</text>
+  <text>{{movie.summary}}</text>
+</view>
+
+<view class='detailCenter'>
+  <view class='actorText'>
+    <text>演员表</text>
+  </view>
+  <scroll-view class='actorPic' scroll-x="true">
+    <view class='scrollBox' wx:for="{{movie.casts}}" wx:key='{{item.id}}'>
+      <image src='{{item.avatars.small}}' class='scrollPic_item' data-index='{{index}}' bindtap='showName' data-id='{{item.id}}'></image>
+      <text class='actorName'>{{item.name}}</text>
+    </view>
+  </scroll-view>
+</view>
+
+<modal bindcancel="modalCancel" class="model" hidden="{{hidden}}" confirm-text="" cancel-text="">
+  <view class='modelBox'>
+    <view class="model-img">
+      <image src="{{actorImg}}"></image>
+      <view class='actorMsg'>
+        <text class="model-name" style='font-weight:bold'>{{actorName}}\n</text>
+        <text>{{actorGender}}\n{{actorBirthday}}出生\n{{bornPlace}}\n{{professions}}</text>
+        <text></text>
+      </view>
+    </view>
+    <view class="model-number">
+      <scroll-view scroll-y='true' class='scrollText' style='height:300rpx;' bindscrolltoupper='upper' bindscrolltolower='lower' bindsroll='scroll' >
+        {{actorSummary}}
+      </scroll-view>
+      <!-- <view class="number-text1"></view>
+      <view class="number-text2"></view> -->
+    </view>
+  </view>
+
+</modal>

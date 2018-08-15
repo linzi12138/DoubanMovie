@@ -1,0 +1,17 @@
+<template name="indexList">
+    <view class='movie' bindtap='goToDetail' data-id='{{item.id}}'>
+      <view class='movie-pic'>
+        <image src='{{item.images.large}}'></image>
+      </view>
+      <view class='movie-info'>
+        <text class='info-title'>{{ item.title }}</text>
+        <view class='info-content'>
+          <text>\n导演： {{ item.directors[0].name }}\n</text> 演员：
+          <text wx:for="{{ item.casts }}" wx:for-item="item" wx:key="pro">{{ item.name }}  </text>
+          <text>\n类型： {{item.genres}}</text>
+          <text>\n上映时间： {{item.pubdates[0]}}</text>
+        </view>
+      </view>
+      <view class='rating'>{{item.rating.average}}</view>
+    </view>
+</template>

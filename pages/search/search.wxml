@@ -1,0 +1,15 @@
+<!--pages/search/search.wxml-->
+<view class='search'>
+  <view class='inputArea'>
+    <form bindsubmit='search'>
+      <input class='searchText' name='keyword' placeholder='请输入搜索内容' bindinput='getInputWord'></input>
+      <button class='searchBtn' form-type='submit' bindtap='search'>搜索</button>
+    </form>
+  </view>
+  
+  <text class="input-show">你要搜索：{{inputWord}}</text>
+  <import src="../common/template.wxml" />
+  <block wx:for="{{ movie }}" wx:key="{{item.id}}">
+    <template is='indexList' data='{{ item }}' />
+  </block>
+</view>
